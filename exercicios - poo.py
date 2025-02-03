@@ -211,7 +211,7 @@ Carro = carro(marca, modelo, velocidade)
 Carro.controle()
 '''
 #EXERCICIO 9 
-class paciente:
+'''class paciente:
     def __init__(self, nome, idade, consulta):
         self.nome = nome
         self.idade = idade
@@ -235,4 +235,53 @@ nome = str (input("Digite o seu nome: "))
 idade = int (input("Digite a sua idade: "))
 consulta = str (input("Digite o seu historico de consultas: "))
 Paciente = paciente(nome, idade, consulta)
-Paciente.historicoConsulta()
+Paciente.historicoConsulta()'''
+
+#EXERCICIO 10 
+class livro:
+        def __init__(self, titulo, autor , numPagina):
+            self.titulo = titulo
+            self.autor = autor
+            self.numPagina = numPagina
+            self.estoque = 0
+
+        def emprestarLivro(self):
+            opcao = int(input("Deseja emprestar um livro? \n1-Sim \n2-Não "))
+
+            if opcao == 1:
+                self.estoque -= 1
+                print("Livro emprestado com sucesso!")
+            elif opcao == 2:
+                print ("Livro não emprestado")
+            else:
+                print("Essa opção não existe.")
+            
+        def devolverLivro(self):
+            opcao1 = int(input("Deseja delvolver um livro? \n1-Sim \n2-Não "))
+
+            if opcao1 == 1:
+                self.estoque += 1
+                print("Livro devolvido com sucesso!")
+            elif opcao == 2:
+                print ("Livro não devolvido")
+            else:
+                print("Essa opção não existe.")
+
+        def verificar(self):
+            nome = str(input("Qual livro deseja verificar? "))
+
+            if nome == self.titulo:
+                print("Livro disponível.")
+            else:
+                print("Livro indisponível.")
+
+
+
+titulo = str (input("Digite o titulo do livro: "))
+autor = str (input("Digite o autor do livro: "))
+numPagina = int (input("Digite o número de páginas do livro: "))
+
+livro = livro(titulo, autor, numPagina)
+livro.emprestarLivro()
+livro.devolverLivro()
+livro.verificar()
