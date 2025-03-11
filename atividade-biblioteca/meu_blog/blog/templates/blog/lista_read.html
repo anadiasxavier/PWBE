@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Biblioteca Bosch</title>
+</head>
+<body>
+    <h1>Biblioteca Bosch</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{lista.as_p}}
+        <button type="submit">Enviar</button>
+    </form>
+    </ul>
+
+    <style>
+        h1{
+        color: rgb(105, 76, 31);
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:270px;
+
+    
+        }
+
+        button{
+        background-color: rgb(105, 54, 17);
+        color: antiquewhite;
+        border: none;
+        width: 85px;
+        border-radius: 5px;
+        height: 35px;
+        font-size: 20px;
+        margin-left: 60px; 
+        
+        }
+    
+        form{
+        margin-left: 820px;
+   
+        }
+
+        input{
+        width: 200px;
+        height: 30px;
+        }
+    </style>
+</body>
+</html>

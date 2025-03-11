@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Delete</title>
+</head>
+<body>
+    <h1>Tu tem certeza que quer apagar esse Livro? {{Livro.titulo}}</h1>
+    <form method="post">
+        {% csrf_token %}
+
+        <button type="submit">Sim, quero apagar!</button>
+    </form>
+    <a href="{% url 'lista_livro'%}">Não, não quero mais apagar.</a>
+
+    <style>
+         h1{
+        color: rgb(105, 76, 31);
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:270px;
+        }
+
+        button{
+        background-color: rgb(105, 54, 17);
+        color: antiquewhite;
+        border: none;
+        width: 300px;
+        border-radius: 5px;
+        height: 35px;
+        font-size: 20px;
+        margin-left: 800px;
+  
+    }
+
+    a{
+        color: blue;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 20px;
+        margin-left: 830px;
+    }
+    </style>
+</body>
+</html>

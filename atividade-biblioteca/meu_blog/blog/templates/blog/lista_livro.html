@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro Lista</title>
+</head>
+<body>
+    <h1>Bem-vindo(a) a Biblioteca da Bosch</h1>
+    <h2>Listagem de Livros</h2>
+    <form method="get" action="{% url 'lista_livros'%}">
+        <input type="text" name="autor" placeholder="Digite o nome do autor" value="{{ request.GET.autor }}">
+        <button type="submit">Buscar</button>
+    </form>
+    <a class = novolivro href="{% url 'lista_create' %}">Adicione um novo livro aqui!</a>
+    <ul>
+        {% for Livro in lista %}
+            <li>
+                {{Livro.titulo}} - {{Livro.autor}} - 
+                <a href="{% url 'lista_update' Livro.pk %}">Editar</a>
+                <a href="{% url 'lista_delete' Livro.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+
+    </ul>
+
+    <!-- Decidi fazer o style aqui no html, porém não é uma boa pratica, decidi fazer aqui apenas para testar. -->
+    <style>
+   
+    h1{
+        color: rgb(105, 76, 31);
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:270px;
+        }
+    
+    h2{
+        color: rgb(150, 117, 68);
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    
+    button{
+        background-color: rgb(105, 54, 17);
+        color: antiquewhite;
+        border: none;
+        width: 85px;
+        border-radius: 5px;
+        height: 35px;
+        font-size: 20px;
+        margin-left: 1030px;
+        transform: translateY(-33px);
+    }
+    input{
+        width: 200px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 800px;
+        margin-top: 50px; 
+    }
+    a{
+        color: blue;
+        margin-left: 20px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    ul{
+        font-size: 20px;
+        margin-left: 670px;
+        margin-top: 20px;
+       
+    }
+
+    .novolivro{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    </style>
+</body>
+</html>
