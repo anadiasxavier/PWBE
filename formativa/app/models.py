@@ -8,7 +8,7 @@ class Usuario(AbstractUser):
     ]
 
     tipo = models.CharField(max_length= 1, choices=TIPO_CHOICES, default='P')
-    ni = models.IntegerField()
+    ni = models.IntegerField(unique=True)
     telefone = models.CharField(max_length=20, blank=True, null=True)
     data_nascimento = models.DateField()
     data_contratacao = models.DateField()
@@ -30,7 +30,7 @@ class Disciplina(models.Model):
     
 
 class Sala (models.Model):
-     nome = models.CharField(max_length=100)
+     nome = models.CharField(max_length=100, unique=True)
      capacidade_alunos = models.IntegerField()
 
      def __str__(self):
